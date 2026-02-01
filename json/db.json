@@ -68,48 +68,6 @@
       "email": "vero@gmail.com",
       "password": "123456",
       "id": "weRVExt"
-    },
-    {
-      "name": "d",
-      "email": "d@d.com",
-      "password": "2",
-      "role": "user",
-      "id": "5WDavIR"
-    },
-    {
-      "name": "km",
-      "email": "hm@gh.com",
-      "password": "f",
-      "role": "user",
-      "id": "qU5h9vg"
-    },
-    {
-      "name": "uu",
-      "email": "u@u.com",
-      "password": "u",
-      "role": "user",
-      "id": "Mkm1yyv"
-    },
-    {
-      "name": "y",
-      "email": "y@y.com",
-      "password": "g",
-      "role": "user",
-      "id": "hY-BelP"
-    },
-    {
-      "name": "l",
-      "email": "l@l.com",
-      "password": "h",
-      "role": "user",
-      "id": "gn8BNR9"
-    },
-    {
-      "name": "h",
-      "email": "h@hh.com",
-      "password": "g",
-      "role": "user",
-      "id": "vd8AEyc"
     }
   ],
   "admin": [

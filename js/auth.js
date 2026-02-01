@@ -79,13 +79,11 @@ async function handleRegister(userInput) {
   }
 
   userInput.role = "user";
-  
+
   try {
     await userRegistration(userInput);
-    
     window.location.href = "./../index.html";
-    
-    
+
   } catch (error) {
     console.error("Registration failed:", error);
   }
@@ -158,23 +156,14 @@ async function handleRegister(userInput) {
 
 
 async function userRegistration(userInfo) {
-  console.log("userRegistration: Starting...");
+
   try {
-    console.log("userRegistration: Calling saveUser with", userInfo);
-   await saveUser(userInfo);
-    
-    console.log("userRegistration: saveUser completed");
-    
-    console.log("userRegistration: Fetching all users...");
+
+    await saveUser(userInfo);
     const allUsers = await getUsers();
-    console.log("userRegistration: Got all users:", allUsers);
     cacheUsers(allUsers);
-    console.log("userRegistration: Cached users");
     users = getCachedUsers();
-    console.log("userRegistration: Updated local users");
-    
-    // users = getCachedUsers();
-    // console.log("userRegistration: Updated local users array");
+
   } catch (error) {
     console.error("Error during registration:", error);
     console.error("Error message:", error.message);
@@ -183,8 +172,6 @@ async function userRegistration(userInfo) {
     throw error;
   }
 }
-
-
 
 // async function userRegistration(userInfo) {
 //   try {
