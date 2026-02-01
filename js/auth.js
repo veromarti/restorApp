@@ -83,7 +83,6 @@ async function handleRegister(userInput) {
   try {
     await userRegistration(userInput);
     window.location.href = "./../index.html";
-
   } catch (error) {
     console.error("Registration failed:", error);
   }
@@ -153,17 +152,12 @@ async function handleRegister(userInput) {
 //   }
 // }
 
-
-
 async function userRegistration(userInfo) {
-
   try {
-
     await saveUser(userInfo);
     const allUsers = await getUsers();
     cacheUsers(allUsers);
     users = getCachedUsers();
-
   } catch (error) {
     console.error("Error during registration:", error);
     console.error("Error message:", error.message);
@@ -204,5 +198,3 @@ registerForm?.addEventListener("submit", (event) => {
 
   handleRegister(userInput);
 });
-
-

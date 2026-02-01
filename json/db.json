@@ -1,88 +1,154 @@
 {
   "users": [
     {
+      "id": "f82c",
       "name": "admin",
       "email": "admin@mail.com",
       "password": "123456",
-      "role": "admin",
-      "id": "f82c"
+      "role": "admin"
     },
     {
+      "id": "2f5a",
       "name": "Leah Maria",
       "email": "leah@mail.com",
       "password": "123456",
-      "role": "user",
-      "id": "2f5a"
+      "role": "user"
     },
     {
+      "id": "f92c",
       "name": "Vero Martinez",
       "email": "vero@mail.com",
       "password": "123456",
-      "role": "user",
-      "id": "f92c"
+      "role": "user"
     },
     {
+      "id": "f82c",
       "name": "Koko Channel",
       "email": "koko@mail.com",
       "password": "123456",
-      "role": "user",
-      "id": "f82c"
+      "role": "user"
     },
     {
+      "id": "yytF9gQ",
       "name": "Miel de Maple",
       "email": "miel@gmail.com",
       "password": "123456",
-      "role": "user",
-      "id": "yytF9gQ"
+      "role": "user"
     },
     {
+      "id": "0zj6TMt",
       "name": "Morita Alzate",
       "email": "morita@bonita.com",
       "password": "123456",
-      "role": "user",
-      "id": "0zj6TMt"
+      "role": "user"
     },
     {
+      "id": "l7LjZyM",
       "name": "Chile Martinez",
       "email": "chilito@gmail.com",
       "password": "123456",
-      "role": "user",
-      "id": "l7LjZyM"
+      "role": "user"
     },
     {
+      "id": "9D3m-ZK",
       "name": "Selva del Monte",
       "email": "selva@gmail.com",
       "password": "123456",
-      "role": "user",
-      "id": "9D3m-ZK"
+      "role": "user"
     },
     {
+      "id": "XLluCo7",
       "name": "Zoze Bisonte",
       "email": "zose@bisonte.com",
       "password": "123456",
-      "role": "user",
-      "id": "XLluCo7"
+      "role": "user"
     },
     {
+      "id": "weRVExt",
       "name": "Vero Martinez",
       "email": "vero@gmail.com",
-      "password": "123456",
-      "id": "weRVExt"
+      "password": "123456"
     }
   ],
   "admin": [
     {
+      "id": "f82c",
       "name": "admin",
       "email": "admin@mail.com",
       "password": "123456",
-      "role": "admin",
-      "id": "f82c"
+      "role": "admin"
     }
   ],
   "products": [
-    {}
+  {
+    "name": "Classic Beef Burger",
+    "price": 8.99,
+    "description": "Premium beef patty with cheddar cheese,lettuce,...",
+    "img": "./../assets/media/beef-burger.jpg",
+    "category": "BURGERS",
+    "id": "dd90"
+  },
+  {
+    "name": "Double Bacon Melt",
+    "price": 12.5,
+    "description": "Two patties, crispy bacon, melted swiss chese, and ...",
+    "img": "./../assets/media/bacon-burger.jpg",
+    "category": "BURGERS",
+    "id": "4ae0"
+  },
+  {
+    "name": "Golden Fries",
+    "price": 3.99,
+    "description": "Freshly cut potatoes fried to perfection with sea salt.",
+    "img": "./../assets/media/fries.jpg",
+    "category": "SIDES",
+    "id": "3c1f"
+  },
+  {
+    "name": "Cola Zero",
+    "price": 2.5,
+    "description": "Chilled zero sugar cola with ice and a slice of lemon",
+    "img": "./../assets/media/cola.jpg",
+    "category": "DRINKS",
+    "id": "29e8"
+  },
+  {
+    "name": "Donut Box",
+    "price": 6.0,
+    "description": "Assorted glazed and frosted donuts.",
+    "img": "./../assets/media/donuts.jpg",
+    "category": "DESSERTS",
+    "id": "72d8"
+  },
+  {
+    "name": "Pepperoni Slice",
+    "price": 4.5,
+    "description": "Large NY style slice with double pepperoni",
+    "img": "./../assets/media/pizza.jpg",
+    "category": "PIZZA",
+    "id": "c31f"
+  }
   ],
   "orders": [
-    {}
+    {
+      "id": "529c",
+      "userId":"XLluCo7",
+      "date":"Jan 31 15:30",
+      "status":"pending",
+      "products":[
+        {
+          "productId":"c31f",
+          "quantity":2,
+          "total":9.0
+        },
+        {
+          "productId":"72d8",
+          "quantity":1,
+          "total":6.0
+        }
+      ],
+      "subtotal":15.0,
+      "tax":1.2
+    }
   ]
 }

@@ -1,6 +1,5 @@
 const API_URL = "http://localhost:3001";
 
-
 export async function getUsers() {
   try {
     const response = await fetch(`${API_URL}/users`);
@@ -54,3 +53,18 @@ export async function saveUser(user) {
 
 //   return response.json();
 // }
+
+export async function getProducts() {
+  try {
+    const response = await fetch(`${API_URL}/products`);
+
+    if (!response.ok) {
+      throw new Error("Error fetching products");
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error("getProducts failed:", error);
+    throw error; //
+  }
+}

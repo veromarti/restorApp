@@ -1,0 +1,36 @@
+:root {
+  --bs-success: #20c94a;
+  --bs-success-rgb: 32, 201, 74;
+
+  --bs-success-text-emphasis: #20c94a;
+  --bs-success-bg-subtle: #d1e7dd;
+  --bs-success-border-subtle: #badbcc;
+}
+
+.btn-success {
+  --bs-btn-bg: #20c94a;
+  --bs-btn-border-color: #20c997;
+  --bs-btn-hover-bg: #1aa179;
+  --bs-btn-hover-border-color: #1aa179;
+}
+
+#main-content .card{
+    position: relative;
+    height: 420px;
+}
+
+#main-content .card .card-img-top {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+#main-content .card .product-category {
+    position: absolute;
+    background-color: #e2e2e2;
+    color: var(--text-primary);
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
