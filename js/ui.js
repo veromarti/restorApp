@@ -1,9 +1,88 @@
+const siteHeader = document.getElementById("site-header");
+const mainContentSection = document.getElementById("main-content");
+const orderSection = document.getElementById("order");
+
 export function renderAdmin() {
-  alert("admin");
+  siteHeader.innerHTML =`
+  <nav class="container-fluid navbar bg-white border-bottom px-3">
+  <span class="navbar-brand fw-bold text-success">▲ RestorApp Admin</span>
+  <div class="d-flex gap-3 align-items-center">
+    <a class="text-decoration-none text-dark fw-semibold" href="#">Dashboard</a>
+    <a class="text-decoration-none text-muted" href="#">Menu</a>
+    <a class="text-decoration-none text-muted" href="#">Users</a>
+    <span class="rounded-circle bg-secondary text-white px-2">A</span>
+  </div>
+</nav>`
+
+mainContentSection.innerHTML = `
+<div class="container-fluid py-4">
+  <div class="row g-4">
+
+    <!-- LEFT COLUMN -->
+    <div class="col-lg-12">
+
+      <!-- STATS -->
+      <div class="row g-3 mb-4">
+        <div class="col-md-4">
+          <div class="card p-3" style="height:100px !important">
+            <small class="text-muted">Total Orders</small>
+            <h4 class="fw-bold">1,245</h4>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3" style="height:100px !important">
+            <small class="text-muted">Pending Orders</small>
+            <h4 class="fw-bold">15</h4>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3" style="height:100px !important">
+            <small class="text-muted">Today's Revenue</small>
+            <h4 class="fw-bold">$3,450</h4>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header bg-white d-flex justify-content-between">
+          <strong>Recent Orders</strong>
+          <div>
+            <button class="btn btn-outline-secondary btn-sm">Filter</button>
+            <button class="btn btn-outline-secondary btn-sm">Export</button>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-hover mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th class="text-end">Total</th>
+              </tr>
+            </thead>
+            <tbody id="orders-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>`
+
+      orderSection.innerHTML =`
+      <div class="col-lg-12">
+      <div class="card" id="order-detail">
+        <div class="card-body text-center text-muted">
+          Select an order to see details
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>`
 }
 
 export function renderUser(products) {
-  const siteHeader = document.getElementById("site-header");
+  
   siteHeader.innerHTML = `
     <div class="container-fluid ">
     <a class="navbar-brand" href="#">RestorApp</a>
@@ -21,8 +100,6 @@ export function renderUser(products) {
         </ul>
         </div>
       </div>`;
-
-  const mainContentSection = document.getElementById("main-content");
 
   const titleSection = document.createElement("div");
   titleSection.classList.add("row");
@@ -105,7 +182,7 @@ export function renderOrder(order) {
   totalProducts++;
 
   const sideSection = document.getElementById("side-content");
-  const orderSection = document.getElementById("order");
+  
   sideSection.innerHTML = "";
 
   let subtotal = 0;
@@ -170,7 +247,7 @@ export function renderUserOrders(orders){
               </div>
 
               <div class="text-end">
-                <div class="fw-bold">$${order.totalOrder}</div>
+                <div class="fw-bold">$${((order.totalOrder)*1.08).toFixed(2)}</div>
                 <span class="badge ${getStatusBadge(order.status)}">
                 ${order.status}
           </span>

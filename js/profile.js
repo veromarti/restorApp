@@ -3,16 +3,19 @@ import { getOrdersByUser } from "./utils.js";
 import { renderProfile, renderUserOrders } from "./ui.js";
 
 const currentUser = getSession();
-const currentUserId = currentUser.id;
+let currentUserId = null
+
+if (currentUser) {
+    currentUserId = currentUser.id;
+}
+
 const orders = getCachedOrders();
 
 document.addEventListener("DOMContentLoaded", async () => {
   checkSession(currentUser);
   const role = currentUser.role;
 
-  if (role !== "user") {
-    renderAdmin();
-  } else {
+  if (role === "user") {
     const savedOrders = await getOrders();
     const userOrders = getOrdersByUser(savedOrders, currentUserId);
     console.log(userOrders);
@@ -20,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     cacheOrders(userOrders);
     renderProfile(currentUser,userOrders);
     renderUserOrders(userOrders)
-  }
+  } 
 });
 
 function getSession() {
@@ -32,7 +35,7 @@ function cacheOrders(ordersList) {
   localStorage.setItem("orders", JSON.stringify(ordersList));
 }
 
-function getCachedOrders() {
+export function getCachedOrders() {
   return JSON.parse(localStorage.getItem("orders") || "[]");
 }
 

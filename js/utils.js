@@ -1,3 +1,4 @@
+import { getStatusBadge } from "./admin.js";
 const order = { products: [],totalOrder: 0 };
 let subtotal = 0;
 let tax = 0;
@@ -48,4 +49,16 @@ export function getDate() {
 
 export function getOrdersByUser(orders, userId) {
   return orders.filter(order => order.userId === userId);
+}
+
+export function refreshOrdersTable(orderId, newStatus) {
+  const rows = document.querySelectorAll("#orders-table tr");
+
+  rows.forEach(row => {
+    if (row.firstElementChild.textContent === `#${orderId}`) {
+      const badge = row.querySelector(".badge");
+      badge.className = `badge ${getStatusBadge(newStatus)}`;
+      badge.textContent = newStatus;
+    }
+  });
 }

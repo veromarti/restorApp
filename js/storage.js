@@ -95,3 +95,25 @@ export async function getOrders() {
     throw error; //
   }
 }
+
+export async function updateOrderStatus(orderId, newStatus) {
+  try {
+    const response = await fetch(`${API_URL}/orders/${orderId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        status: newStatus
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to update order status");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error updating order:", error);
+  }
+}

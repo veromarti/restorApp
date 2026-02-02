@@ -131,7 +131,7 @@
   ],
   "orders": [
     {
-      "id": "9748",
+      "id": "5748",
       "products": [
         {
           "productId": "3c1f",
@@ -161,7 +161,7 @@
       "userId": "9D3m-ZK",
       "date": "Feb 01, 2026, 21:41",
       "status": "delivered",
-      "totalOrder":34.47
+      "totalOrder": 34.47
     },
     {
       "id": "9748",
@@ -194,7 +194,7 @@
       "userId": "XLluCo7",
       "date": "Feb 01, 2026, 21:41",
       "status": "delivered",
-      "totalOrder":34.47
+      "totalOrder": 34.47
     },
     {
       "id": "9728",
@@ -227,7 +227,7 @@
       "userId": "XLluCo7",
       "date": "Feb 01, 2026, 21:41",
       "status": "canceled",
-      "totalOrder":34.47
+      "totalOrder": 34.47
     },
     {
       "id": "00cd",
@@ -243,8 +243,66 @@
       ],
       "userId": "XLluCo7",
       "date": "Feb 01, 2026, 21:46",
-      "status": "pending",
-      "totalOrder":12.5
+      "status": "Delivered",
+      "totalOrder": 12.5
+    },
+    {
+      "id": "98c7",
+      "products": [
+        {
+          "productId": "4ae0",
+          "name": "Double Bacon Melt",
+          "price": 12.5,
+          "img": "./../assets/media/bacon-burger.jpg",
+          "quantity": 2,
+          "total": 25
+        },
+        {
+          "productId": "72d8",
+          "name": "Donut Box",
+          "price": 6,
+          "img": "./../assets/media/donuts.jpg",
+          "quantity": 1,
+          "total": 6
+        },
+        {
+          "productId": "c31f",
+          "name": "Pepperoni Slice",
+          "price": 4.5,
+          "img": "./../assets/media/pizza.jpg",
+          "quantity": 1,
+          "total": 4.5
+        }
+      ],
+      "totalOrder": 35.5,
+      "userId": "XLluCo7",
+      "date": "Feb 01, 2026, 22:46",
+      "status": "pending"
+    },
+    {
+      "id": "62d3",
+      "products": [
+        {
+          "productId": "3c1f",
+          "name": "Golden Fries",
+          "price": 3.99,
+          "img": "./../assets/media/fries.jpg",
+          "quantity": 1,
+          "total": 3.99
+        },
+        {
+          "productId": "4ae0",
+          "name": "Double Bacon Melt",
+          "price": 12.5,
+          "img": "./../assets/media/bacon-burger.jpg",
+          "quantity": 1,
+          "total": 12.5
+        }
+      ],
+      "totalOrder": 16.490000000000002,
+      "userId": "XLluCo7",
+      "date": "Feb 01, 2026, 23:31",
+      "status": "pending"
     }
   ]
 }
