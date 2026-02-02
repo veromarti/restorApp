@@ -3,6 +3,25 @@ export function renderAdmin() {
 }
 
 export function renderUser(products) {
+  const siteHeader = document.getElementById("site-header");
+  siteHeader.innerHTML = `
+    <div class="container-fluid ">
+    <a class="navbar-brand" href="#">RestorApp</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="./../pages/home.html"><strong>Menu</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="./../pages/orders.html"><strong>My Orders</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="./../pages/profile.html"><strong>Profile</strong></a>
+        </li>
+        </ul>
+        </div>
+      </div>`;
+
   const mainContentSection = document.getElementById("main-content");
 
   const titleSection = document.createElement("div");
@@ -132,6 +151,98 @@ export function renderOrder(order) {
   document.getElementById("total").textContent = total.toFixed(2);
 
   orderSection.querySelector("header>h5>span").innerHTML = totalProducts;
+}
+
+export function renderUserOrders(orders){
+    const orderSection = document.getElementById("orders")
+
+    orders.forEach(order => {
+        const output = document.createElement("div");
+        output.classList.add("card", "mb-3")
+        output.innerHTML = 
+        `
+            <div
+              class="card-body d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <strong>#ORD-${order.id}</strong>
+                <div class="text-muted small">${order.date} · ${order.products.length}</div>
+              </div>
+
+              <div class="text-end">
+                <div class="fw-bold">$${order.totalOrder}</div>
+                <span class="badge ${getStatusBadge(order.status)}">
+                ${order.status}
+          </span>
+              </div>
+            </div>
+
+            <div class="card-footer bg-white d-flex justify-content-end gap-2">
+              <button class="btn btn-outline-success btn-sm">
+                View Receipt
+              </button>
+              <button class="btn btn-success btn-sm">Reorder</button>
+            </div>
+          `
+
+          orderSection.appendChild(output)
+    });     
+          
+}
+
+function getStatusBadge(status) {
+  const statusMap = {
+    delivered: "bg-success",
+    pending: "bg-warning text-dark",
+    canceled: "bg-danger"
+  };
+
+  return statusMap[status] || "bg-secondary";
+}
+
+export function renderProfile(user, orders){
+    const profileSection = document.getElementById("user-profile")
+
+    profileSection.innerHTML = 
+    `<img
+    src="./../assets/user.png"
+    class="rounded-circle mb-3"
+    style = "height:100px"alt="User"
+    />
+
+    <h6 class="fw-bold mb-0">${user.name}</h6>
+    <small class="text-muted">${user.email}</small>
+
+    <div class="badge bg-light text-success mt-2">Customer</div>
+
+    <div class="row text-center mt-4">
+    <div class="col">
+        <div class="bg-light rounded p-2">
+        <small class="text-muted">TOTAL ORDERS</small>
+        <div class="fw-bold">${orders.length}</div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="bg-light rounded p-2">
+        <small class="text-muted">LOYALTY PTS</small>
+        <div class="fw-bold text-success">450</div>
+        </div>
+    </div>
+    </div>
+
+    <hr />
+
+    <div class="list-group text-start">
+    <a href="#" class="list-group-item list-group-item-action">
+        Payment Methods
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        Saved Addresses
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        Preferences
+    </a>
+    </div>`;
 }
 
 // export function renderOrder(product) {

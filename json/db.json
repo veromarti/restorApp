@@ -80,75 +80,171 @@
     }
   ],
   "products": [
-  {
-    "name": "Classic Beef Burger",
-    "price": 8.99,
-    "description": "Premium beef patty with cheddar cheese,lettuce,...",
-    "img": "./../assets/media/beef-burger.jpg",
-    "category": "BURGERS",
-    "id": "dd90"
-  },
-  {
-    "name": "Double Bacon Melt",
-    "price": 12.5,
-    "description": "Two patties, crispy bacon, melted swiss chese, and ...",
-    "img": "./../assets/media/bacon-burger.jpg",
-    "category": "BURGERS",
-    "id": "4ae0"
-  },
-  {
-    "name": "Golden Fries",
-    "price": 3.99,
-    "description": "Freshly cut potatoes fried to perfection with sea salt.",
-    "img": "./../assets/media/fries.jpg",
-    "category": "SIDES",
-    "id": "3c1f"
-  },
-  {
-    "name": "Cola Zero",
-    "price": 2.5,
-    "description": "Chilled zero sugar cola with ice and a slice of lemon",
-    "img": "./../assets/media/cola.jpg",
-    "category": "DRINKS",
-    "id": "29e8"
-  },
-  {
-    "name": "Donut Box",
-    "price": 6.0,
-    "description": "Assorted glazed and frosted donuts.",
-    "img": "./../assets/media/donuts.jpg",
-    "category": "DESSERTS",
-    "id": "72d8"
-  },
-  {
-    "name": "Pepperoni Slice",
-    "price": 4.5,
-    "description": "Large NY style slice with double pepperoni",
-    "img": "./../assets/media/pizza.jpg",
-    "category": "PIZZA",
-    "id": "c31f"
-  }
+    {
+      "name": "Classic Beef Burger",
+      "price": 8.99,
+      "description": "Premium beef patty with cheddar cheese,lettuce,...",
+      "img": "./../assets/media/beef-burger.jpg",
+      "category": "BURGERS",
+      "id": "dd90"
+    },
+    {
+      "name": "Double Bacon Melt",
+      "price": 12.5,
+      "description": "Two patties, crispy bacon, melted swiss chese, and ...",
+      "img": "./../assets/media/bacon-burger.jpg",
+      "category": "BURGERS",
+      "id": "4ae0"
+    },
+    {
+      "name": "Golden Fries",
+      "price": 3.99,
+      "description": "Freshly cut potatoes fried to perfection with sea salt.",
+      "img": "./../assets/media/fries.jpg",
+      "category": "SIDES",
+      "id": "3c1f"
+    },
+    {
+      "name": "Cola Zero",
+      "price": 2.5,
+      "description": "Chilled zero sugar cola with ice and a slice of lemon",
+      "img": "./../assets/media/cola.jpg",
+      "category": "DRINKS",
+      "id": "29e8"
+    },
+    {
+      "name": "Donut Box",
+      "price": 6,
+      "description": "Assorted glazed and frosted donuts.",
+      "img": "./../assets/media/donuts.jpg",
+      "category": "DESSERTS",
+      "id": "72d8"
+    },
+    {
+      "name": "Pepperoni Slice",
+      "price": 4.5,
+      "description": "Large NY style slice with double pepperoni",
+      "img": "./../assets/media/pizza.jpg",
+      "category": "PIZZA",
+      "id": "c31f"
+    }
   ],
   "orders": [
     {
-      "id": "529c",
-      "userId":"XLluCo7",
-      "date":"Jan 31 15:30",
-      "status":"pending",
-      "products":[
+      "id": "9748",
+      "products": [
         {
-          "productId":"c31f",
-          "quantity":2,
-          "total":9.0
+          "productId": "3c1f",
+          "name": "Golden Fries",
+          "price": 3.99,
+          "img": "./../assets/media/fries.jpg",
+          "quantity": 1,
+          "total": 3.99
         },
         {
-          "productId":"72d8",
-          "quantity":1,
-          "total":6.0
+          "productId": "4ae0",
+          "name": "Double Bacon Melt",
+          "price": 12.5,
+          "img": "./../assets/media/bacon-burger.jpg",
+          "quantity": 1,
+          "total": 12.5
+        },
+        {
+          "productId": "dd90",
+          "name": "Classic Beef Burger",
+          "price": 8.99,
+          "img": "./../assets/media/beef-burger.jpg",
+          "quantity": 2,
+          "total": 17.98
         }
       ],
-      "subtotal":15.0,
-      "tax":1.2
+      "userId": "9D3m-ZK",
+      "date": "Feb 01, 2026, 21:41",
+      "status": "delivered",
+      "totalOrder":34.47
+    },
+    {
+      "id": "9748",
+      "products": [
+        {
+          "productId": "3c1f",
+          "name": "Golden Fries",
+          "price": 3.99,
+          "img": "./../assets/media/fries.jpg",
+          "quantity": 1,
+          "total": 3.99
+        },
+        {
+          "productId": "4ae0",
+          "name": "Double Bacon Melt",
+          "price": 12.5,
+          "img": "./../assets/media/bacon-burger.jpg",
+          "quantity": 1,
+          "total": 12.5
+        },
+        {
+          "productId": "dd90",
+          "name": "Classic Beef Burger",
+          "price": 8.99,
+          "img": "./../assets/media/beef-burger.jpg",
+          "quantity": 2,
+          "total": 17.98
+        }
+      ],
+      "userId": "XLluCo7",
+      "date": "Feb 01, 2026, 21:41",
+      "status": "delivered",
+      "totalOrder":34.47
+    },
+    {
+      "id": "9728",
+      "products": [
+        {
+          "productId": "3c1f",
+          "name": "Golden Fries",
+          "price": 3.99,
+          "img": "./../assets/media/fries.jpg",
+          "quantity": 1,
+          "total": 3.99
+        },
+        {
+          "productId": "4ae0",
+          "name": "Double Bacon Melt",
+          "price": 12.5,
+          "img": "./../assets/media/bacon-burger.jpg",
+          "quantity": 1,
+          "total": 12.5
+        },
+        {
+          "productId": "dd90",
+          "name": "Classic Beef Burger",
+          "price": 8.99,
+          "img": "./../assets/media/beef-burger.jpg",
+          "quantity": 2,
+          "total": 17.98
+        }
+      ],
+      "userId": "XLluCo7",
+      "date": "Feb 01, 2026, 21:41",
+      "status": "canceled",
+      "totalOrder":34.47
+    },
+    {
+      "id": "00cd",
+      "products": [
+        {
+          "productId": "4ae0",
+          "name": "Double Bacon Melt",
+          "price": 12.5,
+          "img": "./../assets/media/bacon-burger.jpg",
+          "quantity": 1,
+          "total": 12.5
+        }
+      ],
+      "userId": "XLluCo7",
+      "date": "Feb 01, 2026, 21:46",
+      "status": "pending",
+      "totalOrder":12.5
     }
   ]
 }

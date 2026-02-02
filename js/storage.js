@@ -68,3 +68,30 @@ export async function getProducts() {
     throw error; //
   }
 }
+
+export async function saveOrder(order){
+    const response = await fetch(`${API_URL}/orders`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(order)
+  });
+
+  return response.json();
+}
+
+export async function getOrders() {
+  try {
+    const response = await fetch(`${API_URL}/orders`);
+
+    if (!response.ok) {
+      throw new Error("Error fetching orders");
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error("getOrders failed:", error);
+    throw error; //
+  }
+}

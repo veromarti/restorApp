@@ -1,10 +1,13 @@
 import { renderAdmin, renderUser, renderOrder } from "./../js/ui.js";
-import { getProducts } from "./storage.js";
-import { generateOrder } from "./utils.js";
+import { getProducts, saveOrder } from "./storage.js";
+import { generateOrder, getDate } from "./utils.js";
 
 const currentUser = getSession();
-const productSection = document.getElementById("main-content")
-const products = getCachedProducts()
+const currentUserId = currentUser.id;
+const productSection = document.getElementById("main-content");
+const products = getCachedProducts();
+const confirmOrder = document.getElementById("confirm-order");
+let order = {};
 
 document.addEventListener("DOMContentLoaded", async () => {
   checkSession(currentUser);
@@ -14,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderAdmin();
   } else {
     const savedProducts = await getProducts();
-    cacheProducts(savedProducts)
+    cacheProducts(savedProducts);
     renderUser(savedProducts);
   }
 });
@@ -39,25 +42,32 @@ function checkSession(loggedUser) {
 }
 
 function addToCart(productId) {
-    const selectedProduct = products.filter((product) => product.id === productId)
-    // generateOrder(selectedProduct)
-    // renderOrder(selectedProduct)
+  const selectedProduct = products.filter(
+    (product) => product.id === productId,
+  );
 
-    const updatedOrder = generateOrder(selectedProduct);
-    renderOrder(updatedOrder);
-    
+  const updatedOrder = generateOrder(selectedProduct);
+  renderOrder(updatedOrder);
+  order = updatedOrder;
 }
 
-productSection.addEventListener("click", (event) =>{
-    const product = event.target.closest(".card");
-    const productId = product.dataset.productId;
-    if (event.target.matches(".btn-light")) {
-        console.log("entra")
-        console.log(productId)
-        addToCart(productId)
-    }
-})
+productSection.addEventListener("click", (event) => {
+  const product = event.target.closest(".card");
+  const productId = product.dataset.productId;
+  if (event.target.matches(".btn-light")) {
+    console.log("entra");
+    console.log(productId);
+    addToCart(productId);
+  }
+});
 
-
-
-
+confirmOrder.addEventListener("click", async () => {
+  if (order.products) {
+    order["userId"] = currentUserId;
+    order["date"] = getDate();
+    order["status"] = "pending";
+    await saveOrder(order);
+    console.log("order created");
+    window.location.href = "./../pages/profile.html";
+  }
+});
